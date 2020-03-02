@@ -1,4 +1,4 @@
-package net.vandeneijk.learn.re77petclinic;
+package net.vandeneijk.learn.re77petclinic.re77petclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
