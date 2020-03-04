@@ -33,7 +33,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <goals>install</goals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
+<!--                    <autoVersionSubmodules>true</autoVersionSubmodules>-->
                 </configuration>
             </plugin>
         </plugins>
@@ -41,7 +41,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/roberteijk/re77-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
 
 </project>
