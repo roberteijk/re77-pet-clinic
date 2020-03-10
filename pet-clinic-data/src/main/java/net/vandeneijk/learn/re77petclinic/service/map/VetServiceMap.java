@@ -5,11 +5,11 @@
 package net.vandeneijk.learn.re77petclinic.service.map;
 
 import net.vandeneijk.learn.re77petclinic.model.Vet;
-import net.vandeneijk.learn.re77petclinic.service.CrudService;
+import net.vandeneijk.learn.re77petclinic.service.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends ServiceMap<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends ServiceMap<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
@@ -35,5 +35,7 @@ public class VetServiceMap extends ServiceMap<Vet, Long> implements CrudService<
     public void delete(Vet object) {
         super.delete(object);
     }
+
+
 }
 

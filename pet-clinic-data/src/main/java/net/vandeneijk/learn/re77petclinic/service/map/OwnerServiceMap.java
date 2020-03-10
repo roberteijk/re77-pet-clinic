@@ -5,11 +5,11 @@
 package net.vandeneijk.learn.re77petclinic.service.map;
 
 import net.vandeneijk.learn.re77petclinic.model.Owner;
-import net.vandeneijk.learn.re77petclinic.service.CrudService;
+import net.vandeneijk.learn.re77petclinic.service.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends ServiceMap<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends ServiceMap<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -34,5 +34,10 @@ public class OwnerServiceMap extends ServiceMap<Owner, Long> implements CrudServ
     @Override
     public void delete(Owner object) {
         super.delete(object);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

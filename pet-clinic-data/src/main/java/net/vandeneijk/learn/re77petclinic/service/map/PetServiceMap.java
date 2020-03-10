@@ -5,11 +5,11 @@
 package net.vandeneijk.learn.re77petclinic.service.map;
 
 import net.vandeneijk.learn.re77petclinic.model.Pet;
-import net.vandeneijk.learn.re77petclinic.service.CrudService;
+import net.vandeneijk.learn.re77petclinic.service.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends ServiceMap<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends ServiceMap<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
