@@ -6,9 +6,11 @@ package net.vandeneijk.learn.re77petclinic.service.map;
 
 import net.vandeneijk.learn.re77petclinic.model.Owner;
 import net.vandeneijk.learn.re77petclinic.service.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends ServiceMap<Owner, Long> implements OwnerService {
 
     @Override

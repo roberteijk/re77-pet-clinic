@@ -6,9 +6,11 @@ package net.vandeneijk.learn.re77petclinic.service.map;
 
 import net.vandeneijk.learn.re77petclinic.model.Vet;
 import net.vandeneijk.learn.re77petclinic.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends ServiceMap<Vet, Long> implements VetService {
 
     @Override

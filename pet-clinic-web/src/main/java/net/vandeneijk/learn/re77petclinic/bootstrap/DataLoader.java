@@ -8,8 +8,6 @@ import net.vandeneijk.learn.re77petclinic.model.Owner;
 import net.vandeneijk.learn.re77petclinic.model.Vet;
 import net.vandeneijk.learn.re77petclinic.service.OwnerService;
 import net.vandeneijk.learn.re77petclinic.service.VetService;
-import net.vandeneijk.learn.re77petclinic.service.map.OwnerServiceMap;
-import net.vandeneijk.learn.re77petclinic.service.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,9 +17,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
