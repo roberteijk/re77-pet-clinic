@@ -4,14 +4,13 @@
 
 package net.vandeneijk.learn.re77petclinic.service.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import net.vandeneijk.learn.re77petclinic.model.BaseEntity;
 
-public abstract class ServiceMap<T, Id> {
+import java.util.*;
 
-    protected Map<Id, T> map = new HashMap<>();
+public abstract class ServiceMap<T extends BaseEntity, Id extends Long> {
+
+    protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -21,8 +20,13 @@ public abstract class ServiceMap<T, Id> {
         return map.get(id);
     }
 
-    T save(Id id, T object) {
-        map.put(id, object);
+    T save(T object) {
+        if (object != null) {
+            if (object.getId() == null)
+                object.setId((getNextId()));
+            map.put(object.getId(), object);
+        } else throw new IllegalArgumentException("Object cannot be null.");
+
         return object;
     }
 
@@ -32,5 +36,16 @@ public abstract class ServiceMap<T, Id> {
 
     void delete(T object) {
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+    }
+
+    private Long getNextId() {
+        Long nextId = null;
+        try {
+            nextId = Collections.max(map.keySet()) + 1;
+        } catch (NoSuchElementException nseEx) {
+            nextId = 1L;
+        }
+
+        return nextId;
     }
 }
